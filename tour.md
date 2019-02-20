@@ -181,3 +181,26 @@ nobleGases[2] = 'helium';
 nobleGases[10] = 'neon';
 nobleGases[18] = 'argon';
 ```
+
+## 函数
+
+在dart中函数也是对象，可以被赋值给一个变量或者作为参数传递给另外一个函数。
+
+在dart中，可以将类实例视为函数来调用。
+
+```dart
+bool isNoble(int atomicNumber) {
+  return _nobleGases[atomicNumber] != null;
+}
+```
+
+由于dart具有类型推断的能力，因此可以省略上述类型标记。
+
+但是对于外部API而言，最佳实践是实施类型标记。
+
+上述函数体只有一个表达式，可以简化如下：
+
+```dart
+bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
+```
+
